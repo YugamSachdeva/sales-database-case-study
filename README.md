@@ -33,7 +33,7 @@ The database consists of the following tables:
 * Aggregate functions (SUM, AVG, COUNT)
 * Filtering using WHERE
 * Subqueries
-* CASE-based problem solving
+* Analytical queries
 
 ---
 
@@ -42,11 +42,20 @@ The database consists of the following tables:
 * Total products sold
 * Orders by delivery status
 * Customer-wise purchase analysis
-* Daily revenue calculation
+* Daily & monthly revenue analysis
 * Employee performance tracking
 * High-value order identification
 * Customers with no purchases
-* Orders above specific thresholds
+
+---
+
+## 📊 Key Insights
+
+* Rahul Sharma is the highest purchasing customer
+* Maximum revenue generated in May 2024
+* Delivered orders are highest among all statuses
+* Some customers show higher spending patterns
+* Business can target low-activity customers for growth
 
 ---
 
