@@ -43,7 +43,7 @@ JOIN products p ON p.id = so.product_id
 GROUP BY so.o_date;
 
 -- =========================
--- ADVANCED CASE STUDIES
+-- ADVANCED ANALYTICS
 -- =========================
 
 -- Employee-wise total delivered sales
@@ -69,14 +69,32 @@ FROM sales_order so
 JOIN products p ON p.id = so.product_id
 WHERE (so.quantity * p.price) > 2000;
 
--- Top customers by purchase
+-- Top 3 customers by revenue
 SELECT c.name,
-       SUM(so.quantity * p.price) AS total_spent
+       SUM(so.quantity * p.price) AS total_revenue
 FROM sales_order so
 JOIN customers c ON c.id = so.customer_id
 JOIN products p ON p.id = so.product_id
 GROUP BY c.name
-ORDER BY total_spent DESC;
+ORDER BY total_revenue DESC
+LIMIT 3;
+
+-- Monthly revenue trend
+SELECT DATE_FORMAT(so.o_date, '%Y-%m') AS month,
+       SUM(so.quantity * p.price) AS monthly_revenue
+FROM sales_order so
+JOIN products p ON p.id = so.product_id
+GROUP BY month
+ORDER BY month;
+
+-- Most sold product
+SELECT p.name,
+       SUM(so.quantity) AS total_sold
+FROM sales_order so
+JOIN products p ON p.id = so.product_id
+GROUP BY p.name
+ORDER BY total_sold DESC
+LIMIT 1;
 
 -- Customers with above average spending
 SELECT c.name,
