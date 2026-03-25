@@ -2,7 +2,9 @@
 CREATE DATABASE sales_orders;
 USE sales_orders;
 
--- Products Table
+-- =========================
+-- PRODUCTS TABLE
+-- =========================
 CREATE TABLE products (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50),
@@ -17,7 +19,9 @@ INSERT INTO products (name, price, released_date) VALUES
 ('AirPods Pro 2', 250, '2023-09-22'),
 ('iPad Pro M3', 900, '2024-04-18');
 
--- Customers Table
+-- =========================
+-- CUSTOMERS TABLE
+-- =========================
 CREATE TABLE customers (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50),
@@ -30,7 +34,9 @@ INSERT INTO customers (name, email) VALUES
 ('Vikram Singh','vikram@gmail.com'),
 ('Kartik Mehta','kartik@gmail.com');
 
--- Employees Table
+-- =========================
+-- EMPLOYEES TABLE
+-- =========================
 CREATE TABLE employees (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50)
@@ -42,7 +48,9 @@ INSERT INTO employees (name) VALUES
 ('Rohit Verma'),
 ('Neha Singh');
 
--- Sales Orders Table
+-- =========================
+-- SALES ORDER TABLE
+-- =========================
 CREATE TABLE sales_order (
     o_id INT PRIMARY KEY AUTO_INCREMENT,
     o_date DATE,
